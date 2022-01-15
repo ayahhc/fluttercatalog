@@ -8,7 +8,7 @@ class Home extends StatelessWidget {
       appBar: AppBar(
         title: Text("Catalog App"),
       ),
-      drawer: Drawer(backgroundColor: Colors.blueAccent),
+      drawer: Drawer(),
       body:Center(
          child: Container(
             child:Text("hello i am text here"),
