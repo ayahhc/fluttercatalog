@@ -1,3 +1,4 @@
+import 'package:catalog_app/widgets/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:catalog_app/utils/routes.dart';
 
@@ -44,7 +45,7 @@ class _LoginState extends State<Login> {
       appBar: AppBar(
         title: Text("Catalog App"),
       ),
-      drawer: Drawer(),
+      drawer: MyDrawer(),
       body: SingleChildScrollView(
         child: Form(
           key: _formkey,
