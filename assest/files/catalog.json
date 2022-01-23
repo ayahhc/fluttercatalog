@@ -1,0 +1,52 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Galaxy Z Fold3 5G",
+            "desc": "This is everything you'd want in a premium, durable, 5G smartphone.",
+            "price": 999,
+            "color": "#33505a",
+            "Image": "https://rukminim1.flixcart.com/image/312/312/kesv0y80/mobile/b/y/9/redmi-9i-mzb0815in-original-imafvehwghyuphbc.jpeg"
+        },
+        {
+            "id": 2,
+            "name": "vivo V23 Pro 5G",
+            "desc": "This is everything you'd want in a premium, durable, 5G smartphone.",
+            "price": 999,
+            "color": "#33505a",
+            "Image": "https://rukminim1.flixcart.com/image/312/312/ky0g58w0/mobile/a/n/d/-original-imagabvqhyaah4vh.jpeg"
+        },
+        {
+        "id": 3,
+        "name": "Infinix Smart 5A",
+        "desc": "The Infinix Smart 5A brings you impressive visuals, rich sound, and long battery life, all packaged in an attractive smartphone.",
+        "price": 999,
+        "color": "#33505a",
+        "Image": "https://rukminim1.flixcart.com/image/312/312/kq18n0w0/mobile/d/b/6/narzo-30-5g-rmx3242-realme-original-imag45yjub2vdrzx.jpeg"
+    },
+    {
+        "id": 4,
+        "name": "realme Narzo 30 Pro 5G",
+        "desc": "If you love playing games and are looking for a smartphone that can help you enjoy a smooth and responsive gaming experience,then say hello to the Realme Narzo 30 Pro 5G smartphone.",
+        "price": 999,
+        "color": "#33505a",
+        "Image": "https://rukminim1.flixcart.com/image/312/312/ktx9si80/mobile/s/o/j/narzo-50i-rmx3231-realme-original-imag75h86v5thnzy.jpeg"
+    },
+    {
+        "id": 5,
+        "name": "vivo V23 Pro 5G",
+        "desc": "This is everything you'd want in a premium, durable, 5G smartphone.",
+        "price": 999,
+        "color": "#33505a",
+        "Image": "https://rukminim1.flixcart.com/image/312/312/kwv0djk0/mobile/n/t/m/note-11t-21091116ai-mzb0a8qain-redmi-original-imag9g3hxujubg8g.jpeg"
+    },
+    {
+        "id": 6,
+        "name": "Galaxy Z Fold3 5G",
+        "desc": "This is everything you'd want in a premium, durable, 5G smartphone.",
+        "price": 999,
+        "color": "#33505a",
+        "Image": "https://rukminim1.flixcart.com/image/312/312/kua4r680/mobile/n/o/b/m2002f4lg-m1910f4g-redmi-note-10-lite-redmi-original-imag7f7fqkuma9rf.jpeg"
+    }
+]
+}
