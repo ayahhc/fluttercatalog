@@ -54,7 +54,7 @@ setState(() {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CatalogHeader(),
-              if(CatalogModel.items.isNotEmpty == true)
+              if(CatalogModel.items?.isNotEmpty == true)
               CatalogList().expand()
               else
              CircularProgressIndicator().centered().py16().expand(),
