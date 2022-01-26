@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
  
  class CartModel {
 
-static final cartModel = CartModel._internal();
+// wrong way of code (but correct)
 
-CartModel._internal();
-
-factory CartModel() => cartModel; 
+// static final cartModel = CartModel._internal();
+// CartModel._internal();
+// factory CartModel() => cartModel; 
 
    //catalog fields
    CatalogModel? _catalog;
