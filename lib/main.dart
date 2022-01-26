@@ -1,3 +1,4 @@
+import 'package:catalog_app/pages/cart.dart';
 import 'package:catalog_app/pages/home.dart';
 import 'package:catalog_app/pages/login.dart';
 import 'package:catalog_app/utils/routes.dart';
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // home: Home(),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       theme:MyTheme.LightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
 
@@ -25,7 +26,8 @@ class MyApp extends StatelessWidget {
   initialRoute: "/home",
     routes: {
       MyRoute.loginroute:(context)=>Login(),
-    MyRoute.homeroute : (context) => Home()
+      MyRoute.homeroute : (context) => Home(),
+      MyRoute.cartroute : (context) => CartPage()
     
     }
     );

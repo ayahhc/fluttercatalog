@@ -5,10 +5,12 @@ import 'package:catalog_app/widgets/drawer.dart';
 import 'package:catalog_app/widgets/home_widget/catalog_header.dart';
 import 'package:catalog_app/widgets/home_widget/catalog_list.dart';
 import 'package:catalog_app/widgets/theme.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 import 'package:velocity_x/velocity_x.dart';
+import 'package:catalog_app/utils/routes.dart';
 
 
 class Home extends StatefulWidget {
@@ -39,6 +41,11 @@ setState(() {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: MyTheme.creamColor,
+       floatingActionButton: FloatingActionButton(
+        onPressed: ()=>Navigator.pushNamed(context, MyRoute.cartroute),
+        backgroundColor: MyTheme.bluishColor,
+        child: Icon(CupertinoIcons.cart),
+      ),
       body: SafeArea(
         child: Container(
           padding : Vx.m32,
@@ -47,7 +54,7 @@ setState(() {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CatalogHeader(),
-              if(CatalogModel.items?.isNotEmpty == true)
+              if(CatalogModel.items.isNotEmpty == true)
               CatalogList().expand()
               else
              CircularProgressIndicator().centered().py16().expand(),

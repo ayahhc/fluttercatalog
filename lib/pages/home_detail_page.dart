@@ -1,6 +1,7 @@
 
 import 'package:catalog_app/models/catalog.dart';
 import 'package:catalog_app/widgets/theme.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart'; 
 
@@ -24,8 +25,8 @@ class HomeDetail extends StatelessWidget {
                   style: ButtonStyle(backgroundColor: MaterialStateProperty.all(MyTheme.bluishColor),
                   shape: MaterialStateProperty.all(StadiumBorder(),
                   )),
-                    child: "Buy".text.make()
-                    ).wh(100, 50),
+                    child: "Add to cart".text.make()
+                    ).wh(120, 50),
                  
 
                 ],
@@ -50,8 +51,9 @@ class HomeDetail extends StatelessWidget {
                  children: [
                      catalog!.name.text.lg.bold.xl3.color(MyTheme.bluishColor).make(),
                       catalog!.desc.text.xl.color(MyTheme.greyColor).make().p16(),
+                      "It is a long established fact when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.".text.color(MyTheme.greyColor).make().p8()
                  ],
-               ).py64(),
+               ).py16(),
              )))
           ],
         ),
