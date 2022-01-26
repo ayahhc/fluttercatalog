@@ -2,7 +2,13 @@
 import 'package:catalog_app/models/catalog.dart';
 import 'package:flutter/material.dart';
  
- class CartModel{
+ class CartModel {
+
+static final cartModel = CartModel._internal();
+
+CartModel._internal();
+
+factory CartModel() => cartModel; 
 
    //catalog fields
    CatalogModel? _catalog;
@@ -27,7 +33,7 @@ import 'package:flutter/material.dart';
    items.fold(0, (total, current) => total +current.price);
 
    //add item in cart
-   void add(Item item){
+   void add(Item item) {
      _ItemIds.add(item.id);
    }
 

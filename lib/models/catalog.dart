@@ -1,7 +1,18 @@
 import 'dart:convert';
 
+import 'cart_page.dart';
+
 class CatalogModel{
+
+static final catalogModel = CatalogModel._internal();
+
+CatalogModel._internal();
+
+factory CatalogModel() =>  catalogModel;
+
   static List<Item>? items;
+
+  final cartModel = CartModel();
 
   //get item by id
    Item getById(int id)=> 
