@@ -1,36 +1,53 @@
 
 import 'package:catalog_app/models/cart_page.dart';
 import 'package:catalog_app/models/catalog.dart';
+import 'package:catalog_app/provider/cart_change_notifier.dart';
 import 'package:catalog_app/widgets/theme.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:velocity_x/velocity_x.dart';
+import 'package:provider/provider.dart';
+import 'package:velocity_x/src/extensions/bool_ext.dart';
+import 'package:velocity_x/src/extensions/string_ext.dart';
 
-class AddtoCart extends StatelessWidget {
+class AddtoCart extends StatefulWidget {
   final Item? catalog;
 
-   AddtoCart({Key? key,  this.catalog}) : super(key: key);
-  // const AddtoCart({ Key? key }) : super(key: key);
+  const AddtoCart({Key? key,  this.catalog}) : super(key: key);
+  // const _AddtoCart({ Key? key }) : super(key: key);
+
+  @override
+  State<AddtoCart> createState() =>_AddtoCartState();
+}
+
+class AddtoCartState {
+}
+
+class _AddtoCartState extends State<AddtoCart> {
    final _cart = CartModel();
+   bool isInCart = false;
   @override
   Widget build(BuildContext context) {
-bool IsinCart = _cart.items.contains(catalog);
+isInCart = _cart.items.contains(widget.catalog);
     return  Column(
       children: [
         ElevatedButton(onPressed: (){
-          if(!IsinCart){
-          IsinCart = IsinCart.toggle();
-          final _catalog = CatalogModel();
-          final _cart = CartModel();
-           _cart.catalog = _catalog;
-          _cart.add(catalog!);
-          // setState(() {});
+          if(!isInCart){
+          isInCart = isInCart.toggle();
+
+         
+
+        context.read<CartChangeNotifier>().addItemInCart(widget.catalog!);
         }
         },
                       style: ButtonStyle(backgroundColor: MaterialStateProperty.all(MyTheme.bluishColor),
                       shape: MaterialStateProperty.all(StadiumBorder(),
                       )),
-                        child: IsinCart?Icon(Icons.done): Icon(CupertinoIcons.cart_badge_plus)
+                        child:Consumer<CartChangeNotifier>(
+                          builder:(context, cart, _) {
+                            isInCart = cart.cart.items.contains(widget.catalog);
+                    return isInCart?Icon(Icons.done):"Add to cart".text.make();
+                          }
+
+                        ) 
                         ),
       ],
     );

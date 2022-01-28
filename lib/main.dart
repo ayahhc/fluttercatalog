@@ -1,19 +1,16 @@
-import 'package:catalog_app/core/store.dart';
-import 'package:catalog_app/models/cart_page.dart';
-import 'package:catalog_app/models/catalog.dart';
 import 'package:catalog_app/pages/cart.dart';
 import 'package:catalog_app/pages/home.dart';
 import 'package:catalog_app/pages/login.dart';
+import 'package:catalog_app/provider/cart_change_notifier.dart';
 import 'package:catalog_app/utils/routes.dart';
 import 'package:catalog_app/widgets/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:velocity_x/velocity_x.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(VxState(
-    store:MyStore(CatalogModel(),CartModel()),
-    child: const MyApp()));
+  runApp(ChangeNotifierProvider(
+      create: (context) => CartChangeNotifier(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -23,19 +20,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // home: Home(),
-      themeMode: ThemeMode.system,
-      theme:MyTheme.LightTheme(context),
-      darkTheme: MyTheme.darkTheme(context),
+        // home: Home(),
+        themeMode: ThemeMode.system,
+        theme: MyTheme.LightTheme(context),
+        darkTheme: MyTheme.darkTheme(context),
 
-    // routes
-  initialRoute: "/home",
-    routes: {
-      MyRoute.loginroute:(context)=>Login(),
-      MyRoute.homeroute : (context) => Home(),
-      MyRoute.cartroute : (context) => CartPage()
-    
-    }
-    );
+        // routes
+        initialRoute: "/home",
+        routes: {
+          MyRoute.loginroute: (context) => Login(),
+          MyRoute.homeroute: (context) => Home(),
+          MyRoute.cartroute: (context) => CartPage()
+        });
   }
 }
