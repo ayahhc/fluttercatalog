@@ -4,11 +4,10 @@ import 'cart_page.dart';
 
 class CatalogModel{
 
-static final catalogModel = CatalogModel._internal();
-
-CatalogModel._internal();
-
-factory CatalogModel() =>  catalogModel;
+//working code but not needed of singleton
+// static final catalogModel = CatalogModel._internal();
+// CatalogModel._internal();
+// factory CatalogModel() =>  catalogModel;
 
   static List<Item>? items;
 

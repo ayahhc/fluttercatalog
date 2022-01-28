@@ -6,21 +6,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:velocity_x/velocity_x.dart';
 
-class AddtoCart extends StatefulWidget {
+class AddtoCart extends StatelessWidget {
   final Item? catalog;
 
-  const AddtoCart({Key? key,  this.catalog}) : super(key: key);
+   AddtoCart({Key? key,  this.catalog}) : super(key: key);
   // const AddtoCart({ Key? key }) : super(key: key);
-
-  @override
-  State<AddtoCart> createState() => AddtoCartState();
-}
-
-class AddtoCartState extends State<AddtoCart> {
    final _cart = CartModel();
   @override
   Widget build(BuildContext context) {
-bool IsinCart = _cart.items.contains(widget.catalog);
+bool IsinCart = _cart.items.contains(catalog);
     return  Column(
       children: [
         ElevatedButton(onPressed: (){
@@ -29,8 +23,8 @@ bool IsinCart = _cart.items.contains(widget.catalog);
           final _catalog = CatalogModel();
           final _cart = CartModel();
            _cart.catalog = _catalog;
-          _cart.add(widget.catalog!);
-          setState(() {});
+          _cart.add(catalog!);
+          // setState(() {});
         }
         },
                       style: ButtonStyle(backgroundColor: MaterialStateProperty.all(MyTheme.bluishColor),

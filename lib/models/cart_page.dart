@@ -3,12 +3,11 @@ import 'package:catalog_app/models/catalog.dart';
 import 'package:flutter/material.dart';
  
  class CartModel {
+ //working code but not needed of singleton
 
-static final cartModel = CartModel._internal();
-
-CartModel._internal();
-
-factory CartModel() => cartModel; 
+// static final cartModel = CartModel._internal();
+// CartModel._internal();
+// factory CartModel() => cartModel; 
 
    //catalog fields
    CatalogModel? _catalog;
