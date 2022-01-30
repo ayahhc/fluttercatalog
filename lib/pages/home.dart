@@ -1,5 +1,6 @@
 // ignore_for_file: avoid_print
 
+import 'package:catalog_app/models/cart_page.dart';
 import 'package:catalog_app/models/catalog.dart';
 import 'package:catalog_app/widgets/drawer.dart';
 import 'package:catalog_app/widgets/home_widget/catalog_header.dart';
@@ -11,6 +12,7 @@ import 'package:flutter/services.dart';
 import 'dart:convert';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:catalog_app/utils/routes.dart';
+import 'package:http/http.dart' as http;
 
 
 class Home extends StatefulWidget {
@@ -21,6 +23,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+//api is not working here
+// final url ="https://api.jsonbin.io/b/604dbddb683e7e079c4eefd3";
+
   @override
   void initState() {
     super.initState();
@@ -29,6 +34,9 @@ class _HomeState extends State<Home> {
 loadData() async{
   await Future.delayed(Duration(seconds: 2));
  final catalogJson =await rootBundle.loadString("assest/files/catalog.json");
+ //api is not workinh here
+  // final response =await http.get(Uri.parse(url));
+  // final catalogJson = response.body;
 final decodedData  = jsonDecode(catalogJson);
 final productsData = decodedData["products"];
 CatalogModel.items = List.from(productsData).map<Item>((item) => Item.fromMap(item)).toList();
